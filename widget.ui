@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>酒店管理系统</string>
+  </property>
+  <widget class="QPushButton" name="DisplayRoomInformation">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>170</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 20pt &quot;Agency FB&quot;;
+font: 12pt &quot;Agency FB&quot;;</string>
+   </property>
+   <property name="text">
+    <string>显示客房信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SetRoomStatus">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>170</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;</string>
+   </property>
+   <property name="text">
+    <string>设置客房状态</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DeleteRoomInformation">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>240</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;</string>
+   </property>
+   <property name="text">
+    <string>删除客房信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddRoomInformation">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>240</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Agency FB&quot;;</string>
+   </property>
+   <property name="text">
+    <string>添加客房信息</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Title">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>90</y>
+     <width>721</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;酒店管理系统&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Quit">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>300</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Agency FB&quot;;</string>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
