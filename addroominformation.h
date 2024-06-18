@@ -2,6 +2,11 @@
 #define ADDROOMINFORMATION_H
 
 #include <QWidget>
+#include<QMenu>
+#include<QMenuBar>
+#include<QAction>
+#include<iostream>
+#include<windows.h>
 
 namespace Ui {
 class AddRoomInformation;
