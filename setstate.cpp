@@ -6,7 +6,7 @@ setState::setState(QWidget *parent) :
     ui(new Ui::setState)
 {
     ui->setupUi(this);
-    setWindowTitle("修改状态客房");
+    setWindowTitle("修改客房状态");
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 

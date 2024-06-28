@@ -9,20 +9,24 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    //主窗口文本信息
     ui->setupUi(this);
     setCentralWidget(ui->listWidget);
     setWindowTitle("酒店管理系统");
 
+    //设置布局类型
     ui->listWidget->setFlow(QListView::LeftToRight); // 设置从左到右布局
     ui->listWidget->setWrapping(true); // 设置自动换行
+    ui->listWidget->setResizeMode(QListView::Adjust);//控制列表或表格的单元格大小调整模式。
+    ui->listWidget->clear();//清除表格控件的内容
 
-    ui->listWidget->setResizeMode(QListView::Adjust);
-    ui->listWidget->clear();
-
+    //对象申请空间
     set=new setState(this);
     add=new DialogAdd(this);
+    //连接两个对象
     connect(add,&DialogAdd::dialogOK,this,&MainWindow::receivedata);
 
+    //设置主窗口大小布局
     ui->listWidget->setSpacing(5);
     //showFullScreen();
     showMaximized();
@@ -32,6 +36,7 @@ void MainWindow::showdate()
 {
     ui->listWidget->clear(); // 每次显示数据前清空列表
 
+    //循环遍历整个容器进行数据处理
     for (const auto& it : sumdata) {
         QString str;
         str.append("编号: " + QString::number(it.id));
@@ -44,6 +49,7 @@ void MainWindow::showdate()
         QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
         item->setText(str);
 
+        //不同客房状态区分
         if (it.state) {
             // 设置背景颜色为红色
             item->setBackground(Qt::red);
@@ -60,16 +66,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+//点击按钮显示"添加界面"
 void MainWindow::on_action_triggered()
 {
-
     add->exec();
 }
 
+//实现"存储数据"以及"显示数据"
 void MainWindow::receivedata()
 {
-    if(add==nullptr)return;
+    if(add==nullptr)return;//没有数据时直接返回
 
     hotedata data;
     data.id=count+1;
@@ -107,17 +113,12 @@ int getIntWithoutHelpButton(QWidget *parent, const QString &title, const QString
     return value;
 }
 
+//实现"删除客房"功能
 void MainWindow::on_action_2_triggered()
 {
     bool ok = false;
-    int integer = getIntWithoutHelpButton(this,
-                                       "删除客房",
-                                       "请输入客房编号",
-                                       0,
-                                       0,
-                                       40,
-                                       1,
-                                       &ok);
+    int integer = getIntWithoutHelpButton(this,"删除客房","请输入客房编号",0,0,40,1,&ok);
+
     if (ok) {
         // 遍历找到匹配的元素
         int index = -1;
@@ -138,7 +139,7 @@ void MainWindow::on_action_2_triggered()
     }
 }
 
-
+//实现"设置客房状态"功能
 void MainWindow::on_action_3_triggered()
 {
     set->exec();
